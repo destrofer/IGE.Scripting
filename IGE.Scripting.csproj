@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{AB0F002F-9185-4FE3-B7B0-8BF2E79FC9B3}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>IGE.Scripting</RootNamespace>
+    <AssemblyName>IGE.Scripting</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <BaseIntermediateOutputPath>.\obj\$(Configuration)\</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>.\obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>.\bin\$(Configuration)\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>.\bin\$(Configuration)\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Exceptions\ScriptParsingException.cs" />
+    <Compile Include="Exceptions\ScriptCriticalErrorException.cs" />
+    <Compile Include="Exceptions\ScriptExecutionBreakException.cs" />
+    <Compile Include="Exceptions\ScriptExecutionContinueException.cs" />
+    <Compile Include="Exceptions\ScriptExecutionControlException.cs" />
+    <Compile Include="Exceptions\ScriptExecutionExitException.cs" />
+    <Compile Include="Exceptions\ScriptExecutionReturnException.cs" />
+    <Compile Include="Parsing\ErrorCode.cs" />
+    <Compile Include="Parsing\ErrorInfo.cs" />
+    <Compile Include="Parsing\ErrorLevel.cs" />
+    <Compile Include="Parsing\ExecutionNodes\AddExecutionNode.cs">
+      <DependentUpon>Math2ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\AssignmentExecutionNode.cs" />
+    <Compile Include="Parsing\ExecutionNodes\BinaryAndExecutionNode.cs">
+      <DependentUpon>Math2ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\BinaryOrExecutionNode.cs">
+      <DependentUpon>Math2ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\BinaryXorExecutionNode.cs">
+      <DependentUpon>Math2ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\BooleanAndExecutionNode.cs">
+      <DependentUpon>Math2ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\BooleanOrExecutionNode.cs">
+      <DependentUpon>Math2ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\BooleanXorExecutionNode.cs">
+      <DependentUpon>Math2ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\BreakExecutionNode.cs" />
+    <Compile Include="Parsing\ExecutionNodes\CallExecutionNode.cs" />
+    <Compile Include="Parsing\ExecutionNodes\CmpEExecutionNode.cs">
+      <DependentUpon>Math2ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\CmpGEExecutionNode.cs">
+      <DependentUpon>Math2ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\CmpGExecutionNode.cs">
+      <DependentUpon>Math2ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\CmpLEExecutionNode.cs">
+      <DependentUpon>Math2ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\CmpLExectuionNode.cs">
+      <DependentUpon>Math2ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\CmpNEExecutionNode.cs">
+      <DependentUpon>Math2ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\ConditionalExecutionNode.cs" />
+    <Compile Include="Parsing\ExecutionNodes\ContinueExecutionNode.cs" />
+    <Compile Include="Parsing\ExecutionNodes\DivideExecutionNode.cs">
+      <DependentUpon>Math2ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\DoLoopExecutionNode.cs" />
+    <Compile Include="Parsing\ExecutionNodes\ExecutionSequence.cs" />
+    <Compile Include="Parsing\ExecutionNodes\ExecutionTreeNode.cs" />
+    <Compile Include="Parsing\ExecutionNodes\ForLoopExecutionNode.cs" />
+    <Compile Include="Parsing\ExecutionNodes\FunctionNode.cs" />
+    <Compile Include="Parsing\ExecutionNodes\InvertExecutionNode.cs">
+      <DependentUpon>Math1ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\Math1ExecutionNode.cs" />
+    <Compile Include="Parsing\ExecutionNodes\Math2ExecutionNode.cs" />
+    <Compile Include="Parsing\ExecutionNodes\MultiplyExecutionNode.cs">
+      <DependentUpon>Math2ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\NegateExecutionNode.cs">
+      <DependentUpon>Math1ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\PostDecrementExecutionNode.cs">
+      <DependentUpon>Math1ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\PostIncrementExecutionNode.cs">
+      <DependentUpon>Math1ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\PreDecrementExecutionNode.cs">
+      <DependentUpon>Math1ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\PreIncrementExecutionNode.cs">
+      <DependentUpon>Math1ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\RemainderExecutionNode.cs">
+      <DependentUpon>Math2ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\ExitExecutionNode.cs" />
+    <Compile Include="Parsing\ExecutionNodes\ReturnExecutionNode.cs" />
+    <Compile Include="Parsing\ExecutionNodes\ShlExecutionNode.cs">
+      <DependentUpon>Math2ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\ShrExecutionNode.cs">
+      <DependentUpon>Math2ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\SubtractExecutionNode.cs">
+      <DependentUpon>Math2ExecutionNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ExecutionNodes\TernaryExecutionNode.cs" />
+    <Compile Include="Parsing\ExecutionNodes\TypeCastExecutionNode.cs" />
+    <Compile Include="Parsing\ExecutionNodes\VarDefinitionExecutionNode.cs" />
+    <Compile Include="Parsing\ExecutionNodes\WhileLoopExecutionNode.cs" />
+    <Compile Include="Interfaces\IExecutionTreeNode.cs" />
+    <Compile Include="Parsing\ScriptLexer.cs" />
+    <Compile Include="Parsing\ScriptParser.cs" />
+    <Compile Include="Script.cs" />
+    <Compile Include="ScriptContext.cs" />
+    <Compile Include="ScriptEnvironment.cs" />
+    <Compile Include="ScriptExecutionState.cs" />
+    <Compile Include="Parsing\Tokens\ScriptIdentifierToken.cs" />
+    <Compile Include="Parsing\Tokens\ScriptKeywordToken.cs" />
+    <Compile Include="Parsing\Tokens\ScriptLiteralToken.cs" />
+    <Compile Include="Parsing\Tokens\ScriptOperatorToken.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Parsing\Tokens\ScriptToken.cs" />
+    <Compile Include="Variables\ScriptVariable.cs" />
+    <Compile Include="Variables\ScriptVariableDefinition.cs" />
+    <Compile Include="Variables\ScriptVariableType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Parsing\ExecutionNodes" />
+    <Folder Include="Exceptions" />
+    <Folder Include="Interfaces" />
+    <Folder Include="Parsing" />
+    <Folder Include="Variables" />
+    <Folder Include="Parsing\Tokens" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IGE.Common\IGE.Common.csproj">
+      <Project>{9FF16105-BE2B-44A2-91C0-D79F38AD8BA6}</Project>
+      <Name>IGE.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
