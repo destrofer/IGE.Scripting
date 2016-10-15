@@ -171,8 +171,13 @@
     <Compile Include="Variables\ScriptVariable.cs" />
     <Compile Include="Variables\ScriptVariableDefinition.cs" />
     <Compile Include="Variables\ScriptVariableType.cs" />
+    <Compile Include="VM\AssemblerCompiler.cs" />
+    <Compile Include="VM\VirtualDevice.cs" />
+    <Compile Include="VM\VirtualEnvironment.cs" />
+    <Compile Include="VM\VirtualMachine.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="VM" />
     <Folder Include="Parsing\ExecutionNodes" />
     <Folder Include="Exceptions" />
     <Folder Include="Interfaces" />
